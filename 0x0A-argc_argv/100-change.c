@@ -10,18 +10,21 @@ int main(int argc, char *argv[])
 {
 	if (argc == 2)
 	{
-		int i, leastcoin = 0, money = atoi(argv[1];
+		int i, leastcoin = 0, money = atoi(argv[1]);
 		int cent[] = {25, 10, 5, 2, 1};
 		for (i = 0; i < 5; i++)
 		{
-		leastcoin += money / cent[i];
-		money = money % cent[i];
-		if (money % cent[i] == 0)
-		{
-		break;
+			if (money >= cent[i])
+			{
+				leastcoin += money / cent[i];
+				money = money % cent[i];
+				if (money % cent[i] == 0)
+				{
+					break;
+				}
+			}
 		}
-		}
-	printf("%d\n", leastcoin);
+		printf("%d\n", leastcoin);
 	}
 	else
 	{
